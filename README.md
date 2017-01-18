@@ -1,2 +1,2 @@
-# restsql
+# restql
 A RESTful SQLite Servlet
