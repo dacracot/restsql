@@ -1,0 +1,8 @@
+.DS_Store
+*.bbprojectd
+apache-tomcat-*
+tomcat
+apache-ant-*
+ant
+go
+DaMagicWord
