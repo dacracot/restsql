@@ -1,2 +1,2 @@
-# restql
-A RESTful SQLite Servlet
+# storql
+A Stored Procedure SQLite Servlet

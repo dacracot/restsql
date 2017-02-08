@@ -1,4 +1,4 @@
-package org.dacracot.restql.util;
+package org.dacracot.storql.util;
 //---------------------------------------------------
 import java.sql.*;
 //----------------------------------------------------
@@ -22,7 +22,7 @@ public class database
 		{
 		Context initContext = new InitialContext();
 		Context envContext  = (Context)initContext.lookup("java:/comp/env");
-		DataSource ds = (DataSource)envContext.lookup("jdbc/restql");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/storql");
 		conn = ds.getConnection();
 		}
 	//-----------------------------------------------
@@ -40,7 +40,7 @@ public class database
 	//------------------------------------------------
 	private String doSqlWithResult (String call, outputs output)
 		{
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSqlWithResult(call)>> "+call);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSqlWithResult(call)>> "+call);
 		JSONArray jsonResult = new JSONArray();
 		String result = "";
 		try
@@ -91,7 +91,7 @@ public class database
 				}
 			catch(Exception e)
 				{
-				result = debug.logger("org.dacracot.restql.util.database","error: doSqlWithResult:execute>> " + call,e);
+				result = debug.logger("org.dacracot.storql.util.database","error: doSqlWithResult:execute>> " + call,e);
 				}
 			finally
 				{
@@ -102,21 +102,21 @@ public class database
 					}
 				catch(Exception e)
 					{
-					debug.logger("org.dacracot.restql.util.database","error: doSqlWithResult:finally>> ",e);
+					debug.logger("org.dacracot.storql.util.database","error: doSqlWithResult:finally>> ",e);
 					}
 				}
 			}
 		catch(Exception e)
 			{
-			result = debug.logger("org.dacracot.restql.util.database","error: doSqlWithResult:prepareCall>> " + call,e);
+			result = debug.logger("org.dacracot.storql.util.database","error: doSqlWithResult:prepareCall>> " + call,e);
 			}
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSqlWithResult(output)>> "+result);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSqlWithResult(output)>> "+result);
 		return(result);
 		}
 	//-----------------------------------------------
 	private String doSqlWithoutResult (String call)
 		{
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSqlWithoutResult(call)>> "+call);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSqlWithoutResult(call)>> "+call);
 		String result = "";
 		try
 			{
@@ -129,7 +129,7 @@ public class database
 				}
 			catch(Exception e)
 				{
-				result = debug.logger("org.dacracot.restql.util.database","error: doSqlWithoutResult:execute>> " + call,e);
+				result = debug.logger("org.dacracot.storql.util.database","error: doSqlWithoutResult:execute>> " + call,e);
 				}
 			finally
 				{
@@ -139,21 +139,21 @@ public class database
 					}
 				catch(Exception e)
 					{
-					debug.logger("org.dacracot.restql.util.database","error: doSqlWithoutResult:finally>> ",e);
+					debug.logger("org.dacracot.storql.util.database","error: doSqlWithoutResult:finally>> ",e);
 					}
 				}
 			}
 		catch(Exception e)
 			{
-			result = debug.logger("org.dacracot.restql.util.database","error: doSqlWithoutResult:prepareCall>> " + call,e);
+			result = debug.logger("org.dacracot.storql.util.database","error: doSqlWithoutResult:prepareCall>> " + call,e);
 			}
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSqlWithoutResult(output)>> "+result);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSqlWithoutResult(output)>> "+result);
 		return(result);
 		}
 	//-----------------------------------------------
 	public String doSql (String call, String outputType)
 		{
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSql(call,outputType)>> "+call+","+outputType);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSql(call,outputType)>> "+call+","+outputType);
 		String result = "";
 		//-------------------------------------------
 		if (call.toUpperCase().startsWith("SELECT"))
@@ -174,7 +174,7 @@ public class database
 			result = doSqlWithoutResult(call);
 			}
 		//-------------------------------------------
-		if (debug.DEBUG) debug.logger("org.dacracot.restql.util.database","doSql(output)>> "+result);
+		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSql(output)>> "+result);
 		return(result);
 		}
 	//-----------------------------------------------

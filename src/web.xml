@@ -9,14 +9,14 @@
 <!-- ========================================================== -->
 	<resource-ref>
 		<description>sqlite Datasource</description>
-		<res-ref-name>jdbc/restql</res-ref-name>
+		<res-ref-name>jdbc/storql</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
 	</resource-ref>
 <!-- ========================================================== -->
 	<servlet>
 		<servlet-name>sqlServlet</servlet-name>
-		<servlet-class>org.dacracot.restql.sqlServlet</servlet-class>
+		<servlet-class>org.dacracot.storql.sqlServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 		<init-param>
 			<param-name>debugLevel</param-name>

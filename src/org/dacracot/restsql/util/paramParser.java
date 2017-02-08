@@ -1,4 +1,4 @@
-package org.dacracot.restql.util;
+package org.dacracot.storql.util;
 //---------------------------------------------------
 import java.io.*;
 import java.net.*;
@@ -47,7 +47,7 @@ public class paramParser
 				}
 			catch(Exception e)
 				{
-				result = debug.logger("org.dacracot.restql.sqlServlet","error: getPayload>> ",e);
+				result = debug.logger("org.dacracot.storql.sqlServlet","error: getPayload>> ",e);
 				return(result);
 				}
 			}

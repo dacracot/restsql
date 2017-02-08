@@ -1,5 +1,5 @@
 <!-- ======================================================================= -->
-<project name="restql" default="main" basedir="./">
+<project name="storql" default="main" basedir="./">
 	<!-- =================================================================== -->
 	<!-- get enviroment from OS -->
 	<!-- =================================================================== -->
@@ -7,7 +7,7 @@
 	<!-- =================================================================== -->
 	<!-- set misc properties -->
 	<!-- =================================================================== -->
-	<property name="name" value="restql"/>
+	<property name="name" value="storql"/>
 	<property name="version" value="0.1"/>
 	<property name="JDK" value="1.7"/>
 	<!-- =================================================================== -->
@@ -45,7 +45,7 @@
 			<attribute name="Built-By" value="${env.USER}"/>
 			<attribute name="Implementation-Version" value="${version} build ${build.number}"/>
 		</manifest>
-		<jar jarfile="tmp/restql.jar" basedir="tmp/classes" manifest="tmp/MANIFEST.MF"/>
+		<jar jarfile="tmp/storql.jar" basedir="tmp/classes" manifest="tmp/MANIFEST.MF"/>
 		<echo message="compile.java ---------------------------"/>
 	</target>
 	<!-- =================================================================== -->
@@ -54,8 +54,8 @@
 	<target name="load.war" depends="clean, compile.java" description="move everything to the web archive">
 		<echo message="load.war -----------------------------------"/>
 		<buildnumber file="build.number"/>
-		<mkdir dir="tmp/restql"/>
-		<copy todir="tmp/restql/META-INF">
+		<mkdir dir="tmp/storql"/>
+		<copy todir="tmp/storql/META-INF">
 			<fileset dir="src">
 				<include name="context.xml"/>
 			</fileset>
@@ -65,13 +65,13 @@
 			<format property="when" pattern="yyyy-MM-dd HH:mm:ss"/>
 		</tstamp>
 		<filter token="WHEN" value="${when}"/>
-		<copy todir="tmp/restql/testing" filtering="true">
+		<copy todir="tmp/storql/testing" filtering="true">
 			<fileset dir="src/web/testing"/>
 		</copy>
-		<copy todir="tmp/restql/common">
+		<copy todir="tmp/storql/common">
 			<fileset dir="src/web/common"/>
 		</copy>
-		<copy todir="tmp/restql/WEB-INF/lib">
+		<copy todir="tmp/storql/WEB-INF/lib">
 			<fileset dir="lib">
 				<include name="json.jar"/>
 				<include name="sqlite-jdbc-3.16.1.jar"/>
@@ -80,19 +80,19 @@
 				<include name="commons-io-2.4.jar"/>
 			</fileset>
 			<fileset dir="tmp">
-				<include name="restql.jar"/>
+				<include name="storql.jar"/>
 			</fileset>
 		</copy>
-		<copy todir="tmp/restql/WEB-INF/classes">
+		<copy todir="tmp/storql/WEB-INF/classes">
 			<fileset dir="src">
 				<include name="logging.properties"/>
 			</fileset>
 			<fileset dir="./">
-				<include name="restql.db"/>
+				<include name="storql.db"/>
 			</fileset>
 		</copy>
-		<war warfile="restql.war" webxml="src/web.xml" manifest="tmp/MANIFEST.MF">
-			<fileset dir="tmp/restql"/>
+		<war warfile="storql.war" webxml="src/web.xml" manifest="tmp/MANIFEST.MF">
+			<fileset dir="tmp/storql"/>
 		</war>
 		<echo message="load.war -----------------------------------"/>
 	</target>
