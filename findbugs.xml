@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1486578370000" analysisTimestamp="1486611391711" release="">
+  <Project projectName="storql">
+    <Jar>/Users/dacracot/Desktop/Code/storql/tmp/storql.jar</Jar>
+    <AuxClasspathEntry>/Users/dacracot/Desktop/Code/storql/lib/commons-httpclient-3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/dacracot/Desktop/Code/storql/lib/commons-logging-1.1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/dacracot/Desktop/Code/storql/lib/json.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/dacracot/Desktop/Code/storql/lib/servlet-api.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>/Users/dacracot/Desktop/Code/storql/lib/sqlite-jdbc-3.16.1.jar</AuxClasspathEntry>
+    <SrcDir>/Users/dacracot/Desktop/Code/storql/src</SrcDir>
+  </Project>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.sqlServlet">
+      <SourceLine classname="org.dacracot.storql.sqlServlet" start="10" end="93" sourcefile="sqlServlet.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/sqlServlet.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" rank="16" abbrev="Se" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.sqlServlet">
+      <SourceLine classname="org.dacracot.storql.sqlServlet" sourcefile="sqlServlet.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/sqlServlet.java"/>
+    </Class>
+    <Field classname="org.dacracot.storql.sqlServlet" name="pp" signature="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/paramParser;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.sqlServlet" sourcefile="sqlServlet.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/sqlServlet.java"/>
+    </Field>
+    <Type descriptor="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/paramParser;" role="TYPE_FOUND">
+      <SourceLine classname="org.dacracot.storql.util.paramParser" start="9" end="54" sourcefile="paramParser.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/paramParser.java"/>
+    </Type>
+  </BugInstance>
+  <BugInstance type="DM_CONVERT_CASE" priority="3" rank="20" abbrev="Dm" category="I18N">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.database" name="doSql" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.database" start="156" end="178" startBytecode="0" endBytecode="329" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.database" start="159" end="159" startBytecode="44" endBytecode="44" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    <SourceLine classname="org.dacracot.storql.util.database" start="164" end="164" startBytecode="59" endBytecode="59" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" start="17" end="178" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.database" name="doSqlWithResult" signature="(Ljava/lang/String;L/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database$outputs;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.database" start="43" end="114" startBytecode="0" endBytecode="1061" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.database" start="109" end="109" startBytecode="424" endBytecode="424" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="2" rank="12" abbrev="SQL" category="SECURITY">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.database" name="doSql" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.database" start="156" end="178" startBytecode="0" endBytecode="65" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.database" start="174" end="174" startBytecode="105" endBytecode="105" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    <SourceLine classname="org.dacracot.storql.util.database" start="170" end="170" startBytecode="96" endBytecode="96" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="3" rank="15" abbrev="SQL" category="SECURITY">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.database" name="doSqlWithResult" signature="(Ljava/lang/String;L/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database$outputs;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.database" start="43" end="114" startBytecode="0" endBytecode="191" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.database" start="53" end="53" startBytecode="73" endBytecode="73" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+  </BugInstance>
+  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="3" rank="15" abbrev="SQL" category="SECURITY">
+    <Class classname="org.dacracot.storql.util.database">
+      <SourceLine classname="org.dacracot.storql.util.database" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.database" name="doSqlWithoutResult" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.database" start="119" end="151" startBytecode="0" endBytecode="105" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.database" start="128" end="128" startBytecode="63" endBytecode="63" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="3" rank="19" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.database$outputs">
+      <SourceLine classname="org.dacracot.storql.util.database$outputs" start="34" end="38" sourcefile="database.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/database.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="org.dacracot.storql.util.debug">
+      <SourceLine classname="org.dacracot.storql.util.debug" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Class>
+    <Field classname="org.dacracot.storql.util.debug" name="DEBUG" signature="Z" isStatic="true">
+      <SourceLine classname="org.dacracot.storql.util.debug" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.debug">
+      <SourceLine classname="org.dacracot.storql.util.debug" start="7" end="46" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="STCAL_INVOKE_ON_STATIC_DATE_FORMAT_INSTANCE" priority="2" rank="8" abbrev="STCAL" category="MT_CORRECTNESS">
+    <Class classname="org.dacracot.storql.util.debug">
+      <SourceLine classname="org.dacracot.storql.util.debug" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.debug" name="txtFormat" signature="(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="org.dacracot.storql.util.debug" start="32" end="32" startBytecode="0" endBytecode="101" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Method>
+    <Method classname="java.text.SimpleDateFormat" name="format" signature="(Ljava/util/Date;)Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.text.SimpleDateFormat" sourcefile="SimpleDateFormat.java" sourcepath="java/text/SimpleDateFormat.java"/>
+    </Method>
+    <Field classname="org.dacracot.storql.util.debug" name="dateFormat" signature="Ljava/text/SimpleDateFormat;" isStatic="true">
+      <SourceLine classname="org.dacracot.storql.util.debug" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+    </Field>
+    <SourceLine classname="org.dacracot.storql.util.debug" start="32" end="32" startBytecode="31" endBytecode="31" sourcefile="debug.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/debug.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.paramParser">
+      <SourceLine classname="org.dacracot.storql.util.paramParser" start="9" end="54" sourcefile="paramParser.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/paramParser.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.requestException">
+      <SourceLine classname="org.dacracot.storql.util.requestException" start="11" end="12" sourcefile="requestException.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/requestException.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="DB_DUPLICATE_SWITCH_CLAUSES" priority="3" rank="20" abbrev="DB" category="STYLE">
+    <Class classname="org.dacracot.storql.util.sqlBean">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.sqlBean" name="storql" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean" start="43" end="76" startBytecode="0" endBytecode="295" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="51" end="52" startBytecode="52" endBytecode="70" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="56" end="57" startBytecode="71" endBytecode="89" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="61" end="62" startBytecode="90" endBytecode="108" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="66" end="66" startBytecode="109" endBytecode="124" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.sqlBean">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean" start="19" end="76" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" priority="3" rank="15" abbrev="SQL" category="SECURITY">
+    <Class classname="org.dacracot.storql.util.sqlBean">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Class>
+    <Method classname="org.dacracot.storql.util.sqlBean" name="storql" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean" start="43" end="76" startBytecode="0" endBytecode="57" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Method>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="51" end="51" startBytecode="64" endBytecode="64" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="56" end="56" startBytecode="83" endBytecode="83" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="61" end="61" startBytecode="102" endBytecode="102" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="org.dacracot.storql.util.sqlBean" start="66" end="66" startBytecode="121" endBytecode="121" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="3" rank="19" abbrev="Nm" category="BAD_PRACTICE">
+    <Class classname="org.dacracot.storql.util.sqlBean$verbs">
+      <SourceLine classname="org.dacracot.storql.util.sqlBean$verbs" start="33" end="38" sourcefile="sqlBean.java" sourcepath="/Users/dacracot/Desktop/Code/storql/org/dacracot/storql/util/sqlBean.java"/>
+    </Class>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 8 Feb 2017 10:26:10 -0800" total_classes="10" referenced_classes="84" total_bugs="18" total_size="264" num_packages="2" java_version="1.8.0_73" vm_version="25.73-b02" cpu_seconds="5.08" clock_seconds="49.16" peak_mbytes="314.26" alloc_mbytes="683.00" gc_seconds="0.01" priority_3="7" priority_2="11">
+    <PackageStats package="org.dacracot.storql" total_bugs="2" total_types="1" total_size="50" priority_2="2">
+      <ClassStats class="org.dacracot.storql.sqlServlet" sourceFile="sqlServlet.java" interface="false" size="50" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="org.dacracot.storql.util" total_bugs="16" total_types="9" total_size="214" priority_3="7" priority_2="9">
+      <ClassStats class="org.dacracot.storql.util.database" sourceFile="database.java" interface="false" size="87" bugs="6" priority_3="3" priority_2="3"/>
+      <ClassStats class="org.dacracot.storql.util.database$1" sourceFile="database.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.dacracot.storql.util.database$outputs" sourceFile="database.java" interface="false" size="13" bugs="1" priority_3="1"/>
+      <ClassStats class="org.dacracot.storql.util.debug" sourceFile="debug.java" interface="false" size="27" bugs="3" priority_2="3"/>
+      <ClassStats class="org.dacracot.storql.util.paramParser" sourceFile="paramParser.java" interface="false" size="28" bugs="1" priority_2="1"/>
+      <ClassStats class="org.dacracot.storql.util.requestException" sourceFile="requestException.java" interface="false" size="5" bugs="1" priority_2="1"/>
+      <ClassStats class="org.dacracot.storql.util.sqlBean" sourceFile="sqlBean.java" interface="false" size="31" bugs="3" priority_3="2" priority_2="1"/>
+      <ClassStats class="org.dacracot.storql.util.sqlBean$1" sourceFile="sqlBean.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="org.dacracot.storql.util.sqlBean$verbs" sourceFile="sqlBean.java" interface="false" size="15" bugs="1" priority_3="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="121" invocations="614" avgMicrosecondsPerInvocation="197" maxMicrosecondsPerInvocation="9794" standardDeviationMircosecondsPerInvocation="520"/>
+      <ClassProfile name="edu.umd.cs.findbugs.FindBugs2" totalMilliseconds="56" invocations="2" avgMicrosecondsPerInvocation="28333" maxMicrosecondsPerInvocation="41763" standardDeviationMircosecondsPerInvocation="13430"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="31" invocations="84" avgMicrosecondsPerInvocation="378" maxMicrosecondsPerInvocation="2565" standardDeviationMircosecondsPerInvocation="557"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="29" invocations="84" avgMicrosecondsPerInvocation="353" maxMicrosecondsPerInvocation="2564" standardDeviationMircosecondsPerInvocation="531"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="26" invocations="249" avgMicrosecondsPerInvocation="104" maxMicrosecondsPerInvocation="1330" standardDeviationMircosecondsPerInvocation="135"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="18" invocations="616" avgMicrosecondsPerInvocation="30" maxMicrosecondsPerInvocation="1048" standardDeviationMircosecondsPerInvocation="70"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="16" invocations="38" avgMicrosecondsPerInvocation="442" maxMicrosecondsPerInvocation="4040" standardDeviationMircosecondsPerInvocation="708"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="16" invocations="570" avgMicrosecondsPerInvocation="28" maxMicrosecondsPerInvocation="508" standardDeviationMircosecondsPerInvocation="51"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="15" invocations="42" avgMicrosecondsPerInvocation="369" maxMicrosecondsPerInvocation="4047" standardDeviationMircosecondsPerInvocation="751"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="15" invocations="41" avgMicrosecondsPerInvocation="370" maxMicrosecondsPerInvocation="2892" standardDeviationMircosecondsPerInvocation="580"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="13" invocations="38" avgMicrosecondsPerInvocation="367" maxMicrosecondsPerInvocation="3736" standardDeviationMircosecondsPerInvocation="625"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="12" invocations="38" avgMicrosecondsPerInvocation="317" maxMicrosecondsPerInvocation="2238" standardDeviationMircosecondsPerInvocation="379"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>
