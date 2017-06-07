@@ -1,2 +1,3 @@
-# storql
-A Stored Procedure SQLite Servlet
+# restql
+A RESTful Query Language Servlet
+  forked from storql
