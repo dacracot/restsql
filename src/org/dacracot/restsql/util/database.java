@@ -12,6 +12,7 @@ public class database
 	private Connection conn;
 	private Statement stmt;
 	private ResultSet rset;
+	private final String NULL = "";
 	//-----------------------------------------------
 	public database()
 		{
@@ -24,6 +25,7 @@ public class database
 		Context envContext  = (Context)initContext.lookup("java:/comp/env");
 		DataSource ds = (DataSource)envContext.lookup("jdbc/storql");
 		conn = ds.getConnection();
+		doSqlWithoutResult ("PRAGMA foreign_keys = ON");
 		}
 	//-----------------------------------------------
 	public void releaseConn() throws Exception
@@ -64,7 +66,15 @@ public class database
 						JSONObject jsonRow = new JSONObject();
 						for (int i=1; i<=colCnt; i++)
 							{
-							jsonRow.put(meta.getColumnName(i),rset.getObject(i).toString());
+							Object tmp = rset.getObject(i);
+							if (rset.wasNull())
+								{
+								jsonRow.put(meta.getColumnName(i),NULL);
+								}
+							else
+								{
+								jsonRow.put(meta.getColumnName(i),tmp.toString());
+								}
 							}
 						jsonResult.put(jsonRow);
 						} while (rset.next());
@@ -156,7 +166,7 @@ public class database
 		if (debug.DEBUG) debug.logger("org.dacracot.storql.util.database","doSql(call,outputType)>> "+call+","+outputType);
 		String result = "";
 		//-------------------------------------------
-		if (call.toUpperCase().startsWith("SELECT"))
+		if ((call.toUpperCase().startsWith("SELECT")) || (call.toUpperCase().startsWith("WITH RECURSIVE")))
 			{
 			outputs output = null;
 			try
